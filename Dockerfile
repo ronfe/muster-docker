@@ -31,11 +31,11 @@ RUN make install
 RUN make distclean
 
 RUN cd ~/ffmpeg_sources
-RUN git clone --depth 1 https://github.com/nils-werner/x264.git
+RUN git clone --depth 1 git://git.videolan.org/x264
 RUN cd x264
 RUN ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin" --enable-static
-RUN make
-RUN make install
+RUN sudo make
+RUN sudo make install
 RUN make distclean
 
 RUN cd ~/ffmpeg_sources
@@ -103,4 +103,4 @@ RUN mkdir ~/qrsync
 RUN mkdir ~/qrsync/conf
 
 RUN wget http://devtools.qiniu.io/qiniu-devtools-linux_amd64-current.tar.gz
-RUN tar zxvf qiniu-devtools-linux_amd64-current.tar.gz -C ~/qrsyn
+RUN tar zxvf qiniu-devtools-linux_amd64-current.tar.gz -C ~/qrsync
