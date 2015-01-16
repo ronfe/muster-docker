@@ -11,7 +11,7 @@ RUN npm install -g nodemon
 RUN useradd master
 RUN passwd -f -u master
 RUN echo "master ALL=(ALL) ALL" >> /etc/sudoers
-RUN sed -i "requiretty" /etc/sudoers
+RUN sed '/requiretty/d' /etc/sudoers
 
 RUN su master
 RUN cd ~
