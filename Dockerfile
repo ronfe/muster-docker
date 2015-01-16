@@ -15,9 +15,8 @@ RUN sed -i "requiretty" /etc/sudoers
 
 RUN su master
 RUN cd ~
-RUN pwd
 
-RUN git clone --recursive https://github.com/stevennuo/muster
+RUN git clone --recursive https://github.com/stevennuo/muster.git
 
 ## Compile ffmpeg
 RUN export PATH=$PATH:$HOME/bin
