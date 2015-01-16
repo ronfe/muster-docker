@@ -20,7 +20,7 @@ RUN cd ~/ffmpeg_sources && \
     make distclean
 
 RUN cd ~/ffmpeg_sources && \
-    git clone --depth 1 http://git.videolan.org/git/x264.git && \
+    git clone --depth 1 http://repo.or.cz/x264.git && \
     cd x264 && \
     ./configure --prefix="$HOME/ffmpeg_build" --bindir="$HOME/bin" --enable-static && \
     make && \
