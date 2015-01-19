@@ -4,11 +4,9 @@ RUN su master
 RUN cd ~
 
 ENV PATH $PATH:$HOME/bin 
-RUN echo $PATH
-RUN git clone --recursive https://github.com/stevennuo/muster.git
-RUN mkdir ~/ffmpeg_sources
-
-RUN cd ~/ffmpeg_sources && \
+RUN git clone --recursive https://github.com/stevennuo/muster.git && \
+    mkdir ~/ffmpeg_sources && \
+    cd ~/ffmpeg_sources && \
     git clone --depth 1 git://github.com/yasm/yasm.git &&\
     cd yasm &&\
     autoreconf -fiv &&\
